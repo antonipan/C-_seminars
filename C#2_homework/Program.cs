@@ -1,4 +1,4 @@
-﻿/* 
+ 
 // Задача №10
 
 Console.Clear();
@@ -11,7 +11,7 @@ int num111 = Convert.ToInt32(Console.ReadLine());
 int num110 = num111/10;
 int num010 = num110%10;
 
-Console.WriteLine(num010); */
+Console.WriteLine(num010);
 
  // Задача №13
 
@@ -53,4 +53,4 @@ if ((day > 0) & (day < 6))
 else
 {
     Console.WriteLine("Такого дня недели ещё не придумали");
-} */
+}
