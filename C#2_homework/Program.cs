@@ -25,8 +25,7 @@ if (num1 > 99)
 {
     while (num1 > 999)
     {
-        num1 = num1/count;
-        Console.WriteLine(num1);
+        num1 = num1/count;        
     }
     int itog = num1%10;
     Console.WriteLine(itog);
