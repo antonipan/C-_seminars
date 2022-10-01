@@ -1,5 +1,5 @@
  
-// Задача №10
+/* // Задача №10
 
 Console.Clear();
 Console.WriteLine("Задача №10");
@@ -11,9 +11,9 @@ int num111 = Convert.ToInt32(Console.ReadLine());
 int num110 = num111/10;
 int num010 = num110%10;
 
-Console.WriteLine(num010);
+Console.WriteLine(num010); */
 
- // Задача №13
+ /* // Задача №13
 
 Console.WriteLine("Задача №13");
 
@@ -34,8 +34,8 @@ else
 {
     Console.WriteLine("Это число не трёхзначное");
 }
-
-// Задача №16
+ */
+/* // Задача №16
 
 Console.WriteLine("Задача №16");
 
@@ -53,3 +53,8 @@ else
 {
     Console.WriteLine("Такого дня недели ещё не придумали");
 }
+ */
+
+ int a = 5555;
+ a = a/10;
+ Console.WriteLine(a);
