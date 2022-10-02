@@ -1,2 +1,72 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿Console.Clear();
+
+/* // Метод 1. Ничего не принмает, не возвращает.
+void SayHelloC() //  скобки позволяют отличать метод от переменной
+// принято писать метод с большой буквы и называть действием 
+{
+    Console.WriteLine("Привет, Java !");
+}
+// вызов метода.
+SayHelloC();
+SayHelloC();
+SayHelloC(); */
+
+/* // Метод 2. принмает, но не возвращает.
+void SayHellolang(string lang)
+{
+    Console.WriteLine($"Привет, {lang} !");
+    // Внутренняя переменная lang по отношению к методу. 
+}
+// вызов метода.
+SayHellolang("C++");
+SayHellolang("C#");
+string l = "C#"; // Внешняя переменная по отношению к методу.
+//Если в методе объявлен один тип переменной, то вписывать нужно этот тип.
+SayHellolang(l); */
+
+/* 
+// Метод 3. принмает, возвращает.
+int SayMax(int x1, int x2)
+{
+    if (x1 > x2) return x1; // как только программа заходит на return, она покидает метод.
+    // Console.WriteLine($"Max = {x1}.");
+    else return x2;
+    // Console.WriteLine($"Max = {x2}.");
+}
+Console.WriteLine($"Max = {SayMax(4, 1)}.");
+
+int max1 = SayMax(3, 15);
+Console.WriteLine(max1);
+
+int l1 = 5;
+int l2 = 4;
+int max2 = SayMax(l1, l2);
+
+Console.WriteLine($"Max = {max2}."); */
+
+
+// Задача №31.
+// Задайте массив из 12 элементов, заполненный случайными числами. 
+// Найдите сумму отрицательных и положительных элементов массива
+int FillArray (int size, int min, int max)
+{
+    int [] array = new int [size];
+    for (int i = 0; i < size; i++)
+    {
+        array [i] = new Random().Next(min, max);
+        Console.Write(array[i] + ", ");
+    }
+}
+
+
+// Задача №32. 
+// Замените отрицательные элементы массива на положительные и наоборот. 
+
+// Задача №33.
+// Задайте массив. Напишите программу. Присутствует ли данное число в массиве. 
+
+// Задача №35. 
+// Задать массив из 123 элементов. Найти количество элементов в пределах 10 до 99. 
+
+// Задача №37. 
+// Найти произведение симметричных элементов массива. Записать их в новый массив. 
