@@ -48,6 +48,7 @@ Console.WriteLine($"Max = {max2}."); */
 // Задача №31.
 // Задайте массив из 12 элементов, заполненный случайными числами. 
 // Найдите сумму отрицательных и положительных элементов массива
+Console.WriteLine("Задача №31");
 int [] FillArray (int size, int min, int max)
 {
     int [] array = new int [size];
@@ -66,7 +67,6 @@ void PrintArray (int [] array)
         Console.Write(array[i] + " ");
     }
 }
-
 int SummPozit (int []array)
 {
     int size = array.Length;
@@ -91,15 +91,18 @@ int SummNegat (int []array)
 }
 
 
-int [] mass1 = FillArray(10, -9, 9);
+int [] mass1 = FillArray(11, -9, 9);
 PrintArray(mass1); 
 Console.WriteLine();
 Console.WriteLine("This summa of pozitive: " + SummPozit(mass1));
 Console.WriteLine("This summa of negative: " + SummNegat(mass1));
+Console.WriteLine();
 
 
 // Задача №32. 
 // Замените отрицательные элементы массива на положительные и наоборот. 
+Console.WriteLine("Задача 32");
+
 void ReplaceSign(int [] array)
 {
     int size = array.Length;
@@ -112,9 +115,11 @@ void ReplaceSign(int [] array)
 ReplaceSign(mass1);
 Console.WriteLine();
 PrintArray(mass1); 
+Console.WriteLine();
 
 // Задача №33.
 // Задайте массив. Напишите программу. Присутствует ли данное число в массиве. 
+Console.WriteLine("Задача №33");
 Console.Write("enter the number: ");
 int number = Convert.ToInt32(Console.ReadLine());
 void Availibility(int [] array, int num)
@@ -132,13 +137,12 @@ void Availibility(int [] array, int num)
 
 }
 Availibility(mass1, number);
-
+Console.WriteLine();
 
 // Задача №35. 
 // Задать массив из 123 элементов. Найти количество элементов в пределах 10 до 99. 
-
-Console.WriteLine();
 int [] mass2 = FillArray(123, 0, 123);
+Console.WriteLine("Задача №35");
 
 int Countelement(int [] array, int minValue, int maxValue)
 {
@@ -155,13 +159,19 @@ Console.WriteLine ("Количество элементов в массиве: "
 
 // Задача №37. 
 // Найти произведение симметричных элементов массива. Записать их в новый массив. 
-int [] Newarray(int [] array)
+int [] NewArray(int [] array)
 {
     int size = array.Length;
     int [] array2 = new int [size/2];
-    int i = 0;
-    while (i < size/2)
+    for (int i = 0; i < size/2; i++)
     {
-        
+        array2[i] = array[i] * array[(size - 1)-i]; 
     }
+    return array2;
 }
+
+int [] proizv = NewArray(mass1);
+Console.WriteLine("Задача №37");
+PrintArray(mass1);
+Console.WriteLine();
+PrintArray(proizv); 
