@@ -11,9 +11,9 @@ for (int i = 0; i < input; i++)
     {
         Console.Write($"Введите {i+1}-е число: ");
         int num1 = Convert.ToInt32(Console.ReadLine());
-        if (num1 < 0) count++; 
+        if (num1 > 0) count++; 
     }
-Console.WriteLine("Количество отрицательных чисел: " + count+".");
+Console.WriteLine("Количество положительных чисел: " + count+".");
 
 
 // Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, 
