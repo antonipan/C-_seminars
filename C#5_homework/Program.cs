@@ -63,3 +63,37 @@ Console.Write($"Разница между {max} и {min}: = {max - min}");
 
 
 
+// создает рандомный массив double
+double[] RandomArrayDouble(int elements, double min, double max, int accuracy){
+    double[] array = new double[elements];
+    for(int i = 0; i < elements; i++){
+        array[i] = new Random().NextDouble() * (max - min) + min;
+        array[i] = Math.Round(array[i], accuracy);
+    }
+    
+    return array;
+} // Выводит массив Double в String
+string ArrayDoubleToString(double[] arr){
+    string result = "[";
+
+    for(int i = 0; i < arr.Length; i++){
+        if (i < arr.Length - 1){
+            result = result + $"{arr[i]}; ";
+        } else {
+            result = result + $"{arr[i]}";
+        }
+    }
+
+    result = result + "]";
+
+    return result;
+}
+
+double[] array = RandomArrayDouble(10, 10.00, 99.00, 2);
+
+// минимум максимум
+double min1 = array.Min();
+double max1 = array.Max();
+
+// результат
+System.Console.WriteLine($"{ArrayDoubleToString(array)} -> {max - min}");
