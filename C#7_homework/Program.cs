@@ -1,6 +1,6 @@
 ﻿Console.Clear();
 
-/* Console.WriteLine("Task47");
+Console.WriteLine("Task47");
 // Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
 double [,] FillandPrintDoubleArray()
 {
@@ -52,7 +52,7 @@ double CheckNumber(double [,] array)
     return number;
 }
 
-CheckNumber(mass1); */
+CheckNumber(mass1);
 
 Console.WriteLine("Task52");
 
@@ -108,4 +108,5 @@ double [] MidlSummColumn (int [,] array)
 }
 int [,] mass2 = Fillarray();
 Printarray(mass2);
+Console.WriteLine($"Среднеарифметическое по столбцам: ");
 MidlSummColumn(mass2);
