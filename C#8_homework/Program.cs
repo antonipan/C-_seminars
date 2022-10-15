@@ -4,7 +4,7 @@ Console.WriteLine("Задача 54");
 // Задайте двумерный массив. Напишите программу, 
 // которая упорядочит по убыванию элементы каждой строки двумерного массива.
 // Например, задан массив:
-
+// Заполнение двумерного массива.
 int [,] FillArray()
 {
     Console.WriteLine("Введите размер массива");
@@ -22,7 +22,7 @@ int [,] FillArray()
     }
     return array;
 }
-
+// Печать двумерного массива.
 void Printarray(int [,]array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -38,6 +38,7 @@ void Printarray(int [,]array)
 int [,] mass1 = FillArray();
 Printarray(mass1);
 
+// Упорядочивание элементов строки массива.
 int [,] Minrowarray (int [,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -64,25 +65,7 @@ int [,] Minrowarray (int [,] array)
 int [,] mass2 = Minrowarray(mass1);
 Console.WriteLine();
 Printarray(mass2);
-// int [] array = {4, 5, 3, 8, 6};
-// int index = 0;
-// while(index < array.Length)
-// {    
-//     int max = array[index];
-//     for (int i = index+1; i < array.Length; i++)
-//     {
-//         if (array[i] > max) 
-//         {
-//             max = array[i];
-//             array[i] = array[index];
-//             array[index] = max;
-//         }
-//     }
-//     index++;
-// }
-// for (int i = 0; i < array.Length; i++)
-// {
-//     Console.Write($"{array[i]} ");
+
     
 Console.WriteLine("Задача 56");
 // Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, 
@@ -94,6 +77,8 @@ Console.WriteLine("Задача 56");
 // 5 2 6 7
 // Программа считает сумму элементов в каждой строке 
 // и выдаёт номер строки с наименьшей суммой элементов: 1 строка
+
+// Метод поиска строки с минимальной суммой элементов. 
 int Rowminsumm (int [,] array)
 {
     int [] array2 = new int [array.GetLength(0)];
@@ -143,6 +128,7 @@ int [,] mass4 = FillArray();
 Printarray(mass4);
 Console.WriteLine();
 
+// Метод мужножения матриц.
 int [,] Umnogeniematrix (int [,] array1, int [,] array2)
 {
   
@@ -184,43 +170,93 @@ Printarray(mass5);
 // 34(1,0,0) 41(1,1,0)
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
+
 Console.WriteLine("Задача 58");
 
-int [,,] FillthreeArray()
+// Метод заполнения одномерного массива.
+  Console.WriteLine("");
+Console.Write("Первое измерение: ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.Write("Второе измерение: ");
+int b = Convert.ToInt32(Console.ReadLine());
+Console.Write("Третье измерение: ");
+int c = Convert.ToInt32(Console.ReadLine());
+
+int [] FillOneArray(int a, int b, int c)
 {
-    int [,,] array = new int [2,2,2];
-    for (int x = 0; x < 2; x++)
-    {
-        for (int y = 0; y < 2; y++)
+  
+    int index = a*b*c;
+    int [] array = new int [index];
+    for (int i = 0; i < index; i++)
         {
-            for (int z = 0; z < 2; z++)
+            array [i] = new Random().Next(10, 100);
+        }    
+    return array;
+}
+// Метод проверки массива на повторяемость элементов.
+int [] ChgckDouble (int [] array)
+{
+    for (int i = 1; i < array.Length; i++)
+    {
+        for (int j = i-1; j > -1; j--)
+        {
+            if (array [i] == array [j])
             {
-                array[x,y,z] = new Random().Next(10, 100);
+                array [i] = new Random().Next(10, 100);
+                i = j;
             }
         }
     }
     return array;
 }
-
-int [,,] Norepeatarray (int [,,] array)
+// Печать одномерного массива.
+void PrintOneArray (int [] array)
 {
-    for (int x = 0; x < array.GetLength(0); x++)
+    for (int i = 0; i < array.Length; i++)
     {
-        for (int y = 0; y < array.GetLength(1); y++)
+        Console.Write($"{array[i]} ");
+    }
+}
+int [] mass6 = FillOneArray(a,b,c);
+PrintOneArray(mass6);
+Console.WriteLine();
+mass6 = ChgckDouble(mass6);
+PrintOneArray(mass6);
+Console.WriteLine();
+
+// Метод заполнения и печати трёхмерного массива.
+
+void FillPrintThirdArray (int [] array, int a, int b, int C)
+{
+    if (array.Length != a*b*c)
+    {
+        Console.WriteLine ("Массив не может быть заполнен");
+    } else
+    {
+        int [,,] array2 = new int [a,b,c];
+        int count = 0;
+        for (int i = 0; i < a; i++)
         {
-            for (int z = 0; z < array.GetLength(2); z++)
+            for (int j = 0; j < b; j++)
             {
-                array[x,y,z] = new Random().Next(10, 100);
+                for (int k = 0; k < C; k++)
+                {
+                    array2[i,j,k] = array[count];
+                    Console.Write($"{array2[i,j,k]} ({i},{j},{k}) ");
+                    count++;
+                }
+                Console.WriteLine();
             }
+            Console.WriteLine();
         }
     }
-    return array;
-} 
 }
 
-// Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
-// Например, на выходе получается вот такой массив:
-// 01 02 03 04
-// 12 13 14 05
-// 11 16 15 06
-// 10 09 08 07
+FillPrintThirdArray(mass6, a, b, c);
+
+// // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
+// // Например, на выходе получается вот такой массив:
+// // 01 02 03 04
+// // 12 13 14 05
+// // 11 16 15 06
+// // 10 09 08 07
